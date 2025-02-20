@@ -21,7 +21,7 @@ body {
   left: 0;
   width: 100%;
   padding: 1.5rem 5%;
-  background: rgba(2, 38, 53, 0.8);
+  background: rgba(2, 38, 53, 0.8); /* Semi-transparent background */
   backdrop-filter: blur(10px);
   display: flex;
   justify-content: space-between;
@@ -73,10 +73,11 @@ nav a.active {
   color: rgb(253, 253, 10);
 }
 
-#mobile-icon {
+#m-icon {
   font-size: 3rem;
   color: rgb(73, 73, 143);
   display: none;
+  margin-top: 0.5rem; /* Ensure it doesn't overlap content */
 }
 
 .home {
@@ -113,7 +114,6 @@ nav a.active {
   background-color: #022635;
   border: #424203;
 }
-
 
 .co h2 {
   text-shadow: 0 0 7px rgba(255, 255, 255, .3), 0 0 3px rgba(255, 255, 255, .3);
@@ -379,7 +379,6 @@ span {
   margin-top: 40px;
 }
 
-
 .social a {
   display: inline-flex;
   justify-content: center;
@@ -397,71 +396,5 @@ span {
 
 .social a:hover {
   background: rgb(8, 234, 250);
-  color: #052a3a;
-}
-  
-@media (max-width: 768px) {
-  .p-content {
-    grid-template-columns: 1fr;
-    row-gap: 3rem;
-  }
-
-  .projects .p-box {
-    width: 90%; /* Adjust the width so that the project boxes don't fill the entire width */
-    max-width: 400px; /* You can set a max-width for better control */
-  }
-
-  .navbar a {
-    font-size: 2rem;
-    margin-left: 0;
-    margin-bottom: 2rem;
-  }
-
-  .home {
-    margin-top: 3rem;
-  }
-
-  .co img {
-    width: 80%;
-  }
-
-  .heading {
-    font-size: 3rem;
-  }
-
-  .contact form {
-    flex-direction: column;
-    width: 80%;
-  }
-
-  .contact form .input-box input,
-  .contact form textarea {
-    width: 100%;
-    padding: 1.5rem;
-    font-size: 1.5rem;
-  }
-
-  .contact form .btn {
-    width: 100%;
-    font-size: 1.5rem;
-  }
-}
-
-@media (max-width: 600px) {
-  .navbar {
-    display: none; /* Hide navbar by default */
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    background-color: rgba(2, 38, 53, 0.8);
-  }
-
-  .navbar.active {
-    display: flex; /* Show navbar when active */
-  }
-
-  #mobile-icon {
-    display: block; /* Show mobile icon */
-    cursor: pointer;
-  }
+  color: black;
 }
