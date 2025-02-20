@@ -406,6 +406,11 @@ span {
     row-gap: 3rem;
   }
 
+  .projects .p-box {
+    width: 90%; /* Adjust the width so that the project boxes don't fill the entire width */
+    max-width: 400px; /* You can set a max-width for better control */
+  }
+
   .navbar a {
     font-size: 2rem;
     margin-left: 0;
@@ -429,30 +434,6 @@ span {
     width: 80%;
   }
 
-  .projects .p-box {
-    width: 100%;
-  }
-
-  .circle-spin {
-    position: absolute;
-    top: 3%;
-  }
-
-  .navbar {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    width: 50%;
-    padding: 1rem 3%;
-    background: rgba(2, 38, 53, 0.8);
-    backdrop-filter: blur(5px);
-    display: none;
-  }
-
-  .navbar.active {
-    display: block;
-  }
-
   .contact form .input-box input,
   .contact form textarea {
     width: 100%;
@@ -463,5 +444,24 @@ span {
   .contact form .btn {
     width: 100%;
     font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    display: none; /* Hide navbar by default */
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: rgba(2, 38, 53, 0.8);
+  }
+
+  .navbar.active {
+    display: flex; /* Show navbar when active */
+  }
+
+  #mobile-icon {
+    display: block; /* Show mobile icon */
+    cursor: pointer;
   }
 }
