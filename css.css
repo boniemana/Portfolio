@@ -398,3 +398,42 @@ span {
   background: rgb(8, 234, 250);
   color: black;
 }
+
+/* Mobile-specific changes */
+@media screen and (max-width: 768px) {
+  /* Make the send message button and your message display under the contact info */
+  .contact form {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .contact form .input-box,
+  .contact form .btn {
+    width: 80%;
+  }
+
+  /* Display the mobile icon on the right corner in mobile view */
+  #m-icon {
+    display: block;
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 100;
+  }
+
+  .navbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: rgba(2, 38, 53, 0.9);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+    z-index: 50;
+  }
+
+  .navbar.show {
+    display: flex;
+  }
+}
