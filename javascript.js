@@ -29,16 +29,17 @@ window.onscroll = () => {
     });
 };
 
-// Mobile menu toggle
+// Mobile menu toggle (show and hide the navbar)
 menuIcon.onclick = () => {
-    menuIcon.classList.toggle('bx-x');
-    navbar.classList.toggle('active');
+    menuIcon.classList.toggle('bx-x');  // Toggle the menu icon between hamburger and X
+    navbar.classList.toggle('show');    // Add 'show' class to navbar to display it
 };
 
 // Add the event listener for closing the navbar when a link is clicked on mobile
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
-        navbar.classList.remove('active'); // Hide navbar on link click
-        menuIcon.classList.remove('bx-x'); // Close the menu icon
+        // Don't hide the navbar on link click (unless clicking the menu icon)
+        navLinks.forEach(l => l.classList.remove('active')); // Remove 'active' class from all
+        link.classList.add('active'); // Add 'active' class to the clicked link
     });
 });
