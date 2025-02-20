@@ -1,17 +1,18 @@
 var typed = new Typed(".text", {
     strings: ["Student at ASTU", "Studying Bachelor of Science", "in Software Engineering"],
-    typeSpeed: 100,
-    backSpeed: 100,
-    backDelay: 1000,
+    typeSpeed: 80,
+    backSpeed: 59,
+    backDelay: 50,
     loop: true
 });
 
-
-let menuIcon = document.querySelector('#m-icon');
+// Mobile navbar toggle
+let menuIcon = document.querySelector('#m-icon'); // Updated ID for mobile icon
 let navbar = document.querySelector('.navbar');
 let sections = document.querySelectorAll('section');
-let navLinks = document.querySelectorAll('header .navbar a'); // Corrected selector
+let navLinks = document.querySelectorAll('header .navbar a');
 
+// Scroll animation for active navbar link
 window.onscroll = () => {
     sections.forEach(sec => {
         let top = window.scrollY;
@@ -23,12 +24,21 @@ window.onscroll = () => {
             navLinks.forEach(link => {
                 link.classList.remove('active');
             });
-            document.querySelector('header .navbar a[href="#' + id + '"]').classList.add('active'); // Corrected querySelector
+            document.querySelector('header .navbar a[href="#' + id + '"]').classList.add('active');
         }
     });
 };
 
+// Mobile menu toggle
 menuIcon.onclick = () => {
     menuIcon.classList.toggle('bx-x');
-    navbar.classList.toggle('active'); // Assuming you want to toggle 'active' class on navbar
+    navbar.classList.toggle('active');
 };
+
+// Add the event listener for closing the navbar when a link is clicked on mobile
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        navbar.classList.remove('active'); // Hide navbar on link click
+        menuIcon.classList.remove('bx-x'); // Close the menu icon
+    });
+});
