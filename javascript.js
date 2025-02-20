@@ -42,3 +42,32 @@ navLinks.forEach(link => {
         menuIcon.classList.remove('bx-x'); // Close the menu icon
     });
 });
+
+// Ensure mobile navbar works on page load and navigation
+window.onload = () => {
+    // Reset the state of the menu if it was active when the page was loaded
+    if (navbar.classList.contains('active')) {
+        navbar.classList.remove('active'); // Hide navbar on load
+        menuIcon.classList.remove('bx-x'); // Close the icon
+    }
+
+    // Reinitialize the navbar toggle functionality after the page has loaded
+    menuIcon.addEventListener('click', () => {
+        menuIcon.classList.toggle('bx-x');
+        navbar.classList.toggle('active');
+    });
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navbar.classList.remove('active'); // Hide navbar on link click
+            menuIcon.classList.remove('bx-x'); // Close the menu icon
+        });
+    });
+};
+
+// Reapply event listeners if the page content changes dynamically (for SPA routing)
+document.addEventListener('DOMContentLoaded', () => {
+    // Ensure the menu is closed when new content is loaded
+    navbar.classList.remove('active');
+    menuIcon.classList.remove('bx-x');
+});
